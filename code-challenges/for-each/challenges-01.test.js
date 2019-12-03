@@ -61,7 +61,7 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
-  if (arr.length % 3) {
+  if (num% 3 === 2) {
     arr.pop();
   }
 };
@@ -70,7 +70,7 @@ const removeElements = (arr, callback) => {
 
   for (let i = 0; i < arr.length; i++) {
 
-    callback(arr.length, arr);
+    callback(arr[i], arr);
   }
   return arr;
   // Solution code here...
