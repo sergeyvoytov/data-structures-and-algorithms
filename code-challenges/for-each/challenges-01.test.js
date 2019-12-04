@@ -61,7 +61,7 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
-  if (num% 3 === 2) {
+  if (num % 3 === 2) {
     arr.pop();
   }
 };
@@ -84,6 +84,10 @@ Write a function named removeWithForEach that produces the same output as challe
 
 const removeWithForEach = (arr, callback) => {
   // Solution code here...
+  arr.forEach(function (val, index, array) {
+    callback(val, array);
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,6 +102,10 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   // Solution code here...
+  arr.forEach(function (val, index, arr) {
+    removeOne(val, arr);
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +126,14 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let list = [];
+  availableItems.forEach(function (value) {
+    if (value.available === true) {
+      list.push(value.name);
+    }
+  })
+  return list;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,8 +151,21 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let arr2 = [];
+  arr.forEach(function (value) {
+    if ((value % 3 === 0) && (value % 5 === 0)) {
+      arr2.push('Fizz Buzz');
+    } else if (value % 3 === 0) {
+      arr2.push('Fizz');
+    } else if (value % 5 === 0) {
+      arr2.push('Buzz');
+    } else {
+      arr2.push(value);
+    }
+  })
+  return arr2;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -150,13 +178,13 @@ Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return the message with all uppercase characters', () => {
     expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
@@ -170,21 +198,21 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should remove three elements from the array', () => {
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
 
   test('It should only add the available items to the list', () => {
@@ -193,7 +221,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
