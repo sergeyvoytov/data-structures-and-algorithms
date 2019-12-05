@@ -93,7 +93,18 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  function sorting(a, b) {
+    if (a.price > b.price) {
+      return 1;
+    } else if (b.price > a.price) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+  return (arr.sort(sorting));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -104,9 +115,19 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
-};
+  function sorting(a, b) {
+    if (a.toString().length > b.toString().length) {
+      return 1;
+    } else if (b.toString().length > a.toString().length) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+  return (arr.sort(sorting));
 
+
+}
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 7
 
@@ -126,7 +147,16 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  function sorting(a, b) {
+    if (a.lastName > b.lastName) {
+      return 1;
+    } else if (b.lastName > a.lastName) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+  return (arr.sort(sorting));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,9 +169,22 @@ If two people share the same last name, alphabetize on their first name.
 If two people have the same full name, the younger one should come first. Do not worry about capitalization.
 ------------------------------------------------------------------------------------------------ */
 
-const sortPeopleBetter = (arr) => {
-  // Solution code here...
-};
+const sortPeopleBetter = (arr) =>
+  arr.sort((a, b) => {
+    if (a.lastName < b.lastName) {
+      return -1;
+    } else if (a.lastName === b.lastName) {
+      if (a.firstName < b.firstName) {
+        return -1;
+      } else if (a.firstName === b.firstName) {
+        if (a.age < b.age) {
+          return -1;
+        }
+      }
+    } else {
+      return -1;
+    }
+  });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -166,7 +209,7 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -232,7 +275,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should sort items by their price', () => {
     expect(sortByPrice([
       { name: 'Sweatshirt', price: 45 },
@@ -248,7 +291,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should sort numbers by their length', () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([1, 10, 2.8, -47.75]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([1, 100, 2.82, -47.75]);
@@ -256,7 +299,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should sort people by their last names', () => {
     expect(sortPeople(people)).toStrictEqual([
       new Person('Casey', 'Codefellow', 38),
@@ -268,7 +311,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
