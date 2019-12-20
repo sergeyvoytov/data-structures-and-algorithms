@@ -36,7 +36,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 const totalSum = (input) => {
   let count = 0;
   input.forEach(array => {
-    array .forEach(elem => {
+    array.forEach(elem => {
       count += elem
     })
   })
@@ -55,9 +55,15 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+const divisibleByFiveTwoToThePower = (input) => input.map(array =>
+  array.map((element) => {
+    if (Number.isInteger(element) && element % 5 === 0) {
+      return Math.pow(2, element)
+    }
+  }).filter(element => {
+    return element < Infinity;
+  })
+);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -122,19 +128,35 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+  let count = 0;
+  let string = '';
+  data.forEach(element => {
+    if (element.gender === 'female' || element.gender === 'male') {
+      count++;
+      if (count > 1) {
+        string = string + ' and ' + element.name;
+      } else {
+        string = string + element.name;
+      }
+    }
+  })
+  return string;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
-
 let findShortest = (data) => {
-  // Solution code here...
+  let shortest = data[0];
+  for (let index = 1; index < data.length; index++) {
+    if (parseInt(data[index].height) < parseInt(shortest.height)) {
+      shortest = data[index];
+    }
+  }
+  return shortest.name;
 };
-
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
