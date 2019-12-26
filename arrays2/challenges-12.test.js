@@ -107,7 +107,11 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  let result = 'your loss';
+  if (board[row][col] === '#') {
+    result = 'you winning'
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,7 +123,14 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let count = 1;
+  numbers.forEach(innerArray => {
+    innerArray.forEach(value => {
+      count = count * value;
+    });
+  });
+
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +150,16 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let tempCounter = 0;
+  let tempAvg = 0;
+  weather.forEach(innerArray => {
+    innerArray.forEach((value, index, array) => {
+      tempCounter += value;
+    });
+    tempAvg += tempCounter / innerArray.length;
+    tempCounter = 0;
+  });
+  return tempAvg / weather.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -160,7 +180,22 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let counter = 0;
+  let tempAvg = 0;
+  let weekTemp = 99999;
+  weather.forEach(innerArray => {
+    innerArray.forEach((value, index, array) => {
+      counter += value;
+    });
+    tempAvg += counter / innerArray.length;
+    if (tempAvg < weekTemp) {
+      weekTemp = tempAvg;
+    }
+    tempAvg = 0;
+    counter = 0;
+  });
+
+  return weekTemp;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,7 +211,19 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  let array = [];
+
+  let strArray = str.split('\n');
+  let counter = 0;
+  strArray.forEach(val => {
+    let innerArray = val.split(',');
+    innerArray.forEach(val => {
+      counter += parseInt(val);
+    });
+    array.push(counter);
+    counter = 0;
+  });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
