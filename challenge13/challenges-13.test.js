@@ -50,7 +50,12 @@ For example, 'abcdefg' rexturns 'bdf'
 ------------------------x------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let odd = '';
+  for (let index = 1; index < str.length; index += 2) {
+
+    odd += str.charAt(index);
+  }
+  return odd;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +65,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every(string => string.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,7 +75,13 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  let array = [];
+  arr.forEach(string => {
+    if (string.includes(target)) {
+      array.push(string);
+    }
+  });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +91,15 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  let boolean = true;
+
+  arr.forEach(string => {
+    if (!string.includes(target)) {
+      boolean = false;
+    }
+  });
+
+  return boolean;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,7 +115,15 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  for (let index = 0; index < arr.length; index++) {
+    for (let j = 0; j < arr[index].length; j++) {
+      if (arr[index][j].includes('Brook')) {
+        arr[index].splice(j, 1);
+        j--;
+      }
+    }
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
