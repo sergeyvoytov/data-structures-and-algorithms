@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayReverse {
   public static void main (String[] args) {
     // create the array to test your code on later
@@ -11,13 +13,14 @@ public class ArrayReverse {
   }
   // the method you should write, to reverse an array
   public static int[] reverseArray(int[] inputArray) {
-
     int[] reverseArray = new int[inputArray.length];
     int i = 0;
     int length = inputArray.length - 1;
     for(int j = length; 0 <=j; j--) {
         reverseArray[i] = inputArray[j];
         i++;
+
+
     }
     return reverseArray;
   }
