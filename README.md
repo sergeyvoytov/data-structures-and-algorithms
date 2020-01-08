@@ -9,3 +9,11 @@ Reverse an array
 ## Solution
 ![Image description](/code401challenges/assets/ArrayReverse.jpg)
 
+
+
+
+
+## 2nd datachallenge 
+
+
+(/code401challenges/assets/arrayShift.jpg)
