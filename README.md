@@ -16,4 +16,4 @@ Reverse an array
 ## 2nd datachallenge 
 
 
-(/code401challenges/assets/arrayShift.jpg)
+![Image description](/code401challenges/assets/arrayShift.jpg)
