@@ -28,7 +28,7 @@ public class ArrayShift {
         arrayGiven[index] = newValue;
 //        System.out.println("New Array: " + Arrays.toString(arrayGiven));
 
-        return newArray;
+        return arrayGiven;
     }
 
 
