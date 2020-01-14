@@ -8,3 +8,7 @@ O(1) efficiency
 Insert method - 
 includes method
 to string method
+
+#Code challenge #6 
+#Linked List Insertions
+![Image description](/code401challenges/assets/ll-insertion.jpg)
