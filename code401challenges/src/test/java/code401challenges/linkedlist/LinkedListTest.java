@@ -40,7 +40,6 @@ public class LinkedListTest {
 //        System.out.println((list.toString()));
     }
 
-
     //successfully verified includes return true
     @Test
     public void testIncludesTrue() {
@@ -53,7 +52,7 @@ public class LinkedListTest {
 
     }
 
-//test to see if return false
+    //test to see if return false
     @Test
     public void testIncludesFalse() {
         LinkedList list = new LinkedList();
@@ -61,8 +60,83 @@ public class LinkedListTest {
         list.insert(15);
         list.insert(17);
 //        System.out.println(list.toString());
-        assertFalse( list.includes(19));
+        assertFalse(list.includes(19));
+
+    }
+//testing append
+    @Test
+    public void testAppend() {
+        LinkedList list = new LinkedList();
+        list.insert(12);
+        list.insert(15);
+        list.insert(17);
+        list.append(234);
+        String expected = "17, 15, 12, 234";
+        assertEquals(expected, (list.toString()));
 
     }
 
+//Insert in the middle after the specified value
+    @Test
+    public void testInsertAfter() {
+        LinkedList list = new LinkedList();
+        list.insert(80);
+        list.insert(90);
+        list.insert(100);
+        list.insert(110);
+        list.insert(120);
+        list.insertAfter(100, 234);
+//        System.out.println(list.toString());
+        String expected = "120, 110, 100, 234, 90, 80";
+        assertEquals(expected, (list.toString()));
+
+    }
+
+//Insert in the end of the list
+    @Test
+    public void testInsertAfter2() {
+        LinkedList list = new LinkedList();
+        list.insert(80);
+        list.insert(90);
+        list.insert(100);
+        list.insert(110);
+        list.insert(120);
+        list.insertAfter(80, 999);
+//        System.out.println(list.toString());
+        String expected = "120, 110, 100, 90, 80, 999";
+        assertEquals(expected, (list.toString()));
+
+    }
+
+//Insert in the middle of the list
+    @Test
+    public void testInsertBefore1() {
+        LinkedList list = new LinkedList();
+        list.insert(80);
+        list.insert(90);
+        list.insert(100);
+        list.insert(110);
+        list.insert(120);
+        list.insertBefore(100, 234);
+//        System.out.println(list.toString());
+        String expected = "120, 110, 234, 100, 90, 80";
+        assertEquals(expected, (list.toString()));
+
+    }
+
+    //Insert in the beginning of the list
+    @Test
+    public void testInsertBefore2() {
+        LinkedList list = new LinkedList();
+        list.insert(80);
+        list.insert(90);
+        list.insert(100);
+        list.insert(110);
+        list.insert(120);
+        list.insertBefore(120, 234);
+//        System.out.println(list.toString());
+        String expected = "234, 120, 110, 100, 90, 80";
+        assertEquals(expected, (list.toString()));
+
+    }
 }
