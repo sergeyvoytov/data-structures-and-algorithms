@@ -63,7 +63,8 @@ public class LinkedListTest {
         assertFalse(list.includes(19));
 
     }
-//testing append
+
+    //testing append
     @Test
     public void testAppend() {
         LinkedList list = new LinkedList();
@@ -76,7 +77,7 @@ public class LinkedListTest {
 
     }
 
-//Insert in the middle after the specified value
+    //Insert in the middle after the specified value
     @Test
     public void testInsertAfter() {
         LinkedList list = new LinkedList();
@@ -92,7 +93,7 @@ public class LinkedListTest {
 
     }
 
-//Insert in the end of the list
+    //Insert in the end of the list
     @Test
     public void testInsertAfter2() {
         LinkedList list = new LinkedList();
@@ -108,7 +109,7 @@ public class LinkedListTest {
 
     }
 
-//Insert in the middle of the list
+    //Insert in the middle of the list
     @Test
     public void testInsertBefore1() {
         LinkedList list = new LinkedList();
@@ -138,5 +139,35 @@ public class LinkedListTest {
         String expected = "234, 120, 110, 100, 90, 80";
         assertEquals(expected, (list.toString()));
 
+    }
+
+
+    @Test
+    public void testGetK() {
+        LinkedList list = new LinkedList();
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        list.insert(40);
+        list.insert(50);
+        list.insert(60);
+
+        assertEquals(30, list.getK(2));
+        assertEquals(60, list.getK(5));
+        assertEquals(10, list.getK(0));
+//        assertEquals(-1, list.getK(57));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetKwithExemption() {
+        LinkedList list = new LinkedList();
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        list.insert(40);
+        list.insert(50);
+        list.insert(60);
+
+        list.getK(57);
     }
 }
