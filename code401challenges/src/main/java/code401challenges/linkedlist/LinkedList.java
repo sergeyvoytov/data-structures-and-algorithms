@@ -11,9 +11,8 @@ public class LinkedList {
     }
 
     public void insert(int value) {
-//        this.head = new Node(value, head);
-        Node insertNode = new Node(value, head);
-        this.head = insertNode;
+        this.head = new Node(value, this.head);
+
     }
 
     //Define a method called includes which takes any value as an argument and returns
@@ -50,8 +49,7 @@ public class LinkedList {
             head = new Node(value, null);
             return;
         }
-        newNode.next = null;
-        Node last = head;
+        Node last = this.head;
         while (last.next != null)
             last = last.next;
         last.next = newNode;
@@ -78,7 +76,7 @@ public class LinkedList {
         }
     }
 
-// Insert new node after specified value
+    // Insert new node after specified value
     public void insertAfter(int value, int newValue) {
         if (!this.includes(value)) {
             return;
@@ -95,13 +93,26 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+    public int getK(int k) {
+
+
+        Node currentNode = this.head;
+
+        while (currentNode != null) {
+
+            Node lastNode = currentNode;
+            for (int i = 0; i < k; i++) {
+                if (lastNode.next == null && i != k - 1) {
+                    throw new IllegalArgumentException();
+                }
+                lastNode = lastNode.next;
+            }
+            if (lastNode.next == null) {
+                return currentNode.value;
+            }
+            currentNode = currentNode.next;
+        }
+        throw new IllegalArgumentException("Did not find the value");
+    }
 }
-
-
-
-
-
-
-
-
-

@@ -11,18 +11,29 @@ public class ArrayShift {
 //        int newValue = 100;
 
         int[] newArray = new int[arrayGiven.length + 1];
+        int index = findCentr(arrayGiven);
 
 
-        int index = arrayGiven.length / 2;
-        for (int i = arrayGiven.length - 1; i > index; i--) {
+        for (int i = 0; i < arrayGiven.length + 1; i++) {
 
-            arrayGiven[i] = arrayGiven[i - 1];
+            if (i < index) {
+                newArray[i] = arrayGiven[i];
+            } else if (i == index) {
+                newArray[i] = newValue;
+            } else {
+                newArray[i] = arrayGiven[i - 1];
+            }
         }
-        arrayGiven[index] = newValue;
-//        System.out.println("New Array: " + Arrays.toString(arrayGiven));
-
-        return arrayGiven;
+        return newArray;
     }
 
+
+    public static int findCentr(int[] FindCentr) {
+        if (FindCentr.length % 2 != 0) {
+            return FindCentr.length / 2 + 1;
+        } else {
+            return FindCentr.length / 2;
+        }
+    }
 
 }
