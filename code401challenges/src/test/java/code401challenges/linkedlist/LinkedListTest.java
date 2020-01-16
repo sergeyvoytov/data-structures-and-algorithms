@@ -170,4 +170,62 @@ public class LinkedListTest {
 
         list.getK(57);
     }
+
+    @Test
+    public void testMergeCreatedNull() {
+        LinkedList one = new LinkedList();
+        LinkedList two = new LinkedList();
+        assertEquals( null, LinkedList.mergeLists(one, two));
+    }
+
+    @Test
+    public void testMergeEqualLength() {
+        LinkedList first = new LinkedList();
+        LinkedList second = new LinkedList();
+        first.insert(5);
+        first.insert(3);
+        first.insert(1);
+        second.insert(6);
+        second.insert(4);
+        second.insert(2);
+        Node result = LinkedList.mergeLists(first, second);
+        for (int i = 1; i < 7; i++) {
+            assertEquals(i, result.value);
+            result = result.next;
+        }
+    }
+
+    @Test
+    public void testMergeFirstIsLonger() {
+        LinkedList first = new LinkedList();
+        LinkedList second = new LinkedList();
+        first.insert(5);
+        first.insert(3);
+        first.insert(1);
+        second.insert(4);
+        second.insert(2);
+        Node result = LinkedList.mergeLists(first, second);
+        for (
+                int i = 1;
+                i < 6; i++) {
+            assertEquals(i, result.value);
+            result = result.next;
+        }
+    }
+
+    @Test
+    public void testMergeFirstIsShorter() {
+        LinkedList first = new LinkedList();
+        LinkedList second = new LinkedList();
+        first.insert(3);
+        first.insert(1);
+        second.insert(5);
+        second.insert(4);
+        second.insert(2);
+        Node result = LinkedList.mergeLists(first, second);
+        for (int i = 1; i < 6; i++) {
+            assertEquals(i, result.value);
+            result = result.next;
+        }
+    }
 }

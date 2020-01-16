@@ -115,4 +115,33 @@ public class LinkedList {
         }
         throw new IllegalArgumentException("Did not find the value");
     }
+
+
+    public static Node mergeLists(LinkedList first, LinkedList second) {
+        if (first.head == null) {
+            return second.head;
+        } else if (second.head == null) {
+            return first.head;
+        }
+
+        Node current = first.head;
+        Node tempOne = current.next;
+        Node tempTwo = second.head.next;
+        while (current != null) {
+            if (current.next == null && second.head != null) {
+                current.next = second.head;
+                return first.head;
+            }
+            current.next = second.head;
+            second.head.next = tempOne;
+            if (tempTwo == null) {
+                return first.head;
+            }
+            second.head = tempTwo;
+            current = tempOne;
+            tempOne = current.next;
+            tempTwo = second.head.next;
+        }
+        return first.head;
+    }
 }

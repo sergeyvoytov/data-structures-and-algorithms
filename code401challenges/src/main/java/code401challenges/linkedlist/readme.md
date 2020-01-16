@@ -16,3 +16,8 @@ to string method
 #Code challenge #7
 #Linked List finding K element
 ![Image description](/code401challenges/assets/ll-kth-from-end.jpg)
+
+#Code challenge #7
+#Linked List merge of the 2 arrays
+![Image description](/code401challenges/assets/ll-merge.jpg)
+
