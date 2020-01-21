@@ -13,11 +13,16 @@ Queues
 - Peek method does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
 - isEmpty method does not take an argument, and returns a boolean indicating whether or not the queue is empty
 
-## Challenge
-<!-- Description of the challenge -->
+## Challenge 11
+Implement a Queue using two Stacks.
+
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
+dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
 
-## API
-<!-- Description of each method publicly available to your Stack and Queue-->
+O(n) space
+
+O(n) time
+## Whiteboard image
+![Image description](/code401challenges/assets/queue-with-stacks.jpg)

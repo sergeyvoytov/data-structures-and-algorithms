@@ -27,7 +27,19 @@ public class QueueTest {
 
     @Test
     public void dequeue() {
-        assertEquals(2, queueTest.dequeue());
+
+        assertEquals(1, queueTest.dequeue());
+    }
+
+
+    @Test(expected = NullPointerException.class)
+    public void dequeueAll() {
+        queueTest.dequeue();
+        queueTest.dequeue();
+        queueTest.dequeue();
+        queueTest.dequeue();
+        queueTest.dequeue();
+        queueTest.dequeue();
     }
 
     @Test
@@ -40,13 +52,5 @@ public class QueueTest {
         assertFalse(queueTest.isEmpty());
     }
 
-    @Test(expected = NullPointerException.class)
-    public void dequeueAll() {
-        queueTest.dequeue();
-        queueTest.dequeue();
-        queueTest.dequeue();
-        queueTest.dequeue();
-        queueTest.dequeue();
-        queueTest.dequeue();
-    }
+
 }

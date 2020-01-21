@@ -28,6 +28,9 @@ public class StackTest {
 
     @Test
     public void pop() {
+
+//        System.out.println( stackTest.pop());
+
         assertEquals(4, stackTest.pop());
     }
 
