@@ -3,7 +3,7 @@ package code401challenges.stacksandqueues;
 public class Node <Tomato> {
 
     Tomato value;
-    Node next;
+    public Node next;
 
     public Node(Tomato value, Node top) {
         this.value= value;
