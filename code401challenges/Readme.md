@@ -48,3 +48,17 @@ O(1) space
 O(n) time
 ## Whiteboard image
 ![Image description](/code401challenges/assets/AnimalShelter.jpg)
+
+
+## Challenge 13
+Multi-bracket Validation.
+
+
+## Approach & Efficiency
+created multiBracketValidation(String input)  method to verify that brackets create a matching pair. Stack is used to verify. If the all pairs are the amtch then returns true.
+
+O(n) space
+
+O(n) time
+## Whiteboard image
+![Image description](/code401challenges/assets/multi-bracket-validation.jpg)

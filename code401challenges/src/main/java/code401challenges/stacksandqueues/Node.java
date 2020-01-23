@@ -2,12 +2,25 @@ package code401challenges.stacksandqueues;
 
 public class Node <Tomato> {
 
-    Tomato value;
-    public Node next;
+    public Tomato value;
+
+    public Node<Tomato> getNext() {
+        return next;
+    }
+
+    public Node <Tomato> next;
 
     public Node(Tomato value, Node top) {
         this.value= value;
         this.next = top;
+    }
+
+    public Tomato getValue() {
+        return (Tomato)value;
+    }
+
+    public void setNext(Node<Tomato> next) {
+        this.next = next;
     }
 
 
