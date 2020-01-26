@@ -3,9 +3,7 @@ package code401challenges.stacksandqueues;
 public class PseudoQueue<Potato> {
 
     Potato russet;
-
     Node<Potato> top;
-
     Stack<Potato> firstStack;
     Stack<Potato> secondStack;
 
@@ -15,24 +13,21 @@ public class PseudoQueue<Potato> {
     }
 
     public void enqueue(Potato value) {
-        if (firstStack.peek() == null) {
-            firstStack.push(value);
-        } else {
+        while (!firstStack.isEmpty()) {
             secondStack.push(firstStack.pop());
         }
         firstStack.push(value);
-
-    }
-
-
-    // Removes the node from the front of the queue, and returns that node's value
-    public Potato dequeue() {
-        if (firstStack != null) {
-
-            return firstStack.pop();
+        while (!secondStack.isEmpty()) {
+            firstStack.push(secondStack.pop());
         }
-        throw new IllegalArgumentException();
     }
 
-
+    public Potato dequeue() {
+        if (firstStack.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        firstStack.peek();
+        firstStack.pop();
+        return firstStack.peek();
+    }
 }
