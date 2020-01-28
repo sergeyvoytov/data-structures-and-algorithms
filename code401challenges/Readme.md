@@ -65,13 +65,23 @@ O(n) time
 
 
 # Trees
-<!-- Short summary or background information -->
+A Tree is a non-linear data structure where data objects are organized in terms of hierarchical relationship. The structure is non-linear in the sense that, unlike simple array and linked list implementation, data in a tree is not organized linearly. 
+Featured tasks completed:
+- Created a Node class that has properties for the value stored in the node, the left child node, and the right child node.
+- Created a BinaryTree class
+- Defined a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns a list
+of the values, ordered appropriately.
+- Created a BinarySearchTree class
+- Defined a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+- Defined a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
-## Challenge
-<!-- Description of the challenge -->
+## Challenge 16
+Conduct “FizzBuzz” on a tree while traversing through it. Change the values of each of the nodes dependent on the current node’s value
+
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+O(n) for space and O(n) for time
 
-## API
-<!-- Description of each method publicly available in each of your trees -->
+I decided to do it recursely using helper method
+## Whiteboard image
+![Image description](/code401challenges/assets/fizzbuzz.jpg)

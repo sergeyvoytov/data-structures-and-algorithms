@@ -1,11 +1,18 @@
 package code401challenges.tree;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class BinaryTree {
     // reference     https://www.baeldung.com/java-binary-tree
-    Node root;
+    public Node root;
+    public StrNode strRoot;
+
+    public BinaryTree(StrNode strRoot) {
+        this.strRoot = strRoot;
+        this.root= null;
+    }
+
+
 
 
     public BinaryTree(Node root) {
@@ -14,6 +21,7 @@ public class BinaryTree {
 
     public BinaryTree() {
         this.root = null;
+        this.strRoot=null;
     }
 
     public  ArrayList preOrder(){
