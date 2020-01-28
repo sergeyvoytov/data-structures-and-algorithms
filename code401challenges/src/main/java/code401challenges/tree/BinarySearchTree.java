@@ -1,15 +1,47 @@
 package code401challenges.tree;
 
-public class BinarySearchTree {
+public class BinarySearchTree extends BinaryTree {
 
 
-    //    public void add(int value) {
-//        root = addRecursive(root, value);
-//    }
+    public BinarySearchTree(Node root) {
+        super(root);
+    }
+
+    public BinarySearchTree() {
+        super();
+    }
+
+    public void add(int value) {
+        root = add(root, value);
+    }
+
+
+    public Node add(Node root, int value) {
+        if (root == null) {
+            return new Node(value);
+        }
+
+        if (value < root.value) {
+            root.left = add(root.left, value);
+        } else if (value > root.value) {
+            root.right = add(root.right, value);
+        } else {
+            // value already exists
+            return root;
+        }
+
+        return root;
+    }
+
 
     //Define a method named contains that accepts a value, and returns a boolean indicating whether
 // or not the value is in the tree at least once.
-    public boolean contains(Node node, int key) {
+    public boolean contains(int key){
+        return contains(this.root, key);
+
+    }
+
+    private boolean contains(Node node, int key) {
         if (node == null)
             return false;
         if (node.value == key)
@@ -24,21 +56,22 @@ public class BinarySearchTree {
         return rightSubTree;
     }
 
-    public Node addRecursive(Node current, int value) {
-        if (current == null) {
-            return new Node(value);
-        }
 
-        if (value < current.value) {
-            current.left = addRecursive(current.left, value);
-        } else if (value > current.value) {
-            current.right = addRecursive(current.right, value);
-        } else {
-            // value already exists
-            return current;
+    public void printInOrder(Node root) {
+        if (root == null) {
+            return;
         }
+        printInOrder(root.left);
+        System.out.println(root.value);
+        printInOrder(root.right);
+    }
 
-        return current;
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "value=" + root +
+                '}';
     }
 
 
