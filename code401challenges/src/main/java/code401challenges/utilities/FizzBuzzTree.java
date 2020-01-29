@@ -9,8 +9,6 @@ public class FizzBuzzTree extends BinaryTree {
         super(strNode);
     }
 
-
-
     private static void fb(StrNode node) {
         if (Integer.parseInt(node.value) % 3 == 0 && Integer.parseInt(node.value) % 5 == 0) {
             node.value = "FizzBuzz";
