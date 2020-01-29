@@ -85,3 +85,18 @@ O(n) for space and O(n) for time
 I decided to do it recursely using helper method
 ## Whiteboard image
 ![Image description](/code401challenges/assets/fizzbuzz.jpg)
+
+
+
+## Challenge 17
+Breadth-first Traversal.
+
+
+## Approach & Efficiency
+O(n) for space and O(n) for time
+
+Write a breadth first traversal method which takes a Binary Tree as its unique input.## Whiteboard image
+![Image description](/code401challenges/assets/breadth-first.jpg)
+
+
+
