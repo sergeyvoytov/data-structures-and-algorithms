@@ -98,5 +98,16 @@ O(n) for space and O(n) for time
 Write a breadth first traversal method which takes a Binary Tree as its unique input.## Whiteboard image
 ![Image description](/code401challenges/assets/breadth-first.jpg)
 
+## Challenge 18
+Find the Maximum Value in a Binary Tree
+
+
+## Approach & Efficiency
+O(n) for space and O(n) for time
+
+- Wrote an instance method called find-maximum-value , returns the maximum value stored in the tree, assuming that the values stored in the Binary Tree will be numeric.
+- Used search helper method to recursevly search the binary tree using Node as a parameter 
+![Image description](/code401challenges/assets/find-maximum-value.jpg)
+
 
 
