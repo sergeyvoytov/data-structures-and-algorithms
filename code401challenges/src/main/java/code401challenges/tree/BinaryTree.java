@@ -12,9 +12,6 @@ public class BinaryTree {
         this.root= null;
     }
 
-
-
-
     public BinaryTree(Node root) {
         this.root = root;
     }
@@ -39,8 +36,6 @@ public class BinaryTree {
         }
         return list;
     }
-
-
 
     public  ArrayList inOrder(){
         ArrayList<Integer> list = new ArrayList<>();
@@ -75,7 +70,5 @@ public class BinaryTree {
         }
         return list;
     }
-
-
 
 }
