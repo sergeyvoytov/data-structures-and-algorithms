@@ -1,4 +1,4 @@
-# Selection Sort
+# Insertion Sort
 Insert Sort is a sorting algorithm that traverses the array multiple times as it slowly builds out the sorting sequence.
 
 ## Pseudocode
