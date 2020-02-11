@@ -21,7 +21,7 @@ Insert Sort is a sorting algorithm that traverses the array multiple times as it
 
     
 #### 1st RUN
-On the 1st run our variable i would be 1 and out temporary array would be the length of 1 and will be storing first value {8}
+On the 1st run our variable it would be 1 and out temporary array would be the length of 1 and will be storing first value {8}
     
 #### 2nd RUN
 On the second run our temporary array will have length of 2 and values {4,8}
