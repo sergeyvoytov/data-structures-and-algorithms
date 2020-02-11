@@ -109,5 +109,11 @@ O(n) for space and O(n) for time
 - Used search helper method to recursevly search the binary tree using Node as a parameter 
 ![Image description](/code401challenges/assets/find-maximum-value.jpg)
 
+## Selection Sort
 
-
+Insert Sort is a sorting algorithm that traverses the array multiple times as it slowly builds out the sorting sequence.
+  O(n2) for space
+  O(1) for time
+ 
+ 
+ ![Image description](/code401challenges/assets/1sort.jpg)
