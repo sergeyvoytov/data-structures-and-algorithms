@@ -117,3 +117,11 @@ Insert Sort is a sorting algorithm that traverses the array multiple times as it
  
  
  ![Image description](/code401challenges/assets/1sort.jpg)
+
+## Merge Sort
+
+Merge Sort is a sorting algorithm that traverses the array multiple times as it slowly builds out the sorting sequence.
+  O(logN) for space
+  O(n) for time
+ 
+ ![Image description](/code401challenges/assets/merge.jpg)
