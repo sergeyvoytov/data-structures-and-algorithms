@@ -5,7 +5,7 @@ I'm using separate function to determine the middle point of the array and then 
 ![Image description](/code401challenges/assets/arrayShift.jpg)
 
 
-# Stacks and Queues
+## Stacks and Queues
 
 Stacks
 - used push method makes any value as an argument and adds a new node with that value to the top
@@ -125,3 +125,9 @@ Merge Sort is a sorting algorithm that traverses the array multiple times as it 
   O(n) for time
  
  ![Image description](/code401challenges/assets/merge.jpg)
+ 
+## Quick Sort
+
+O(nlogN) for space
+O(nlogN) for time
+ ![Image description](/code401challenges/assets/quick.jpg)
