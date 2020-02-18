@@ -131,3 +131,16 @@ Merge Sort is a sorting algorithm that traverses the array multiple times as it 
 O(nlogN) for space
 O(nlogN) for time
  ![Image description](/code401challenges/assets/quick.jpg)
+ 
+ 
+ # Hashtables
+In computing, a hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values.  
+I have created custom methods and tests for them: 
+add();get();contains(), hash(), toString();
+
+ ## Challenge
+ <!-- Description of the challenge -->
+ 
+ ## Approach & Efficiency
+ <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+ 
