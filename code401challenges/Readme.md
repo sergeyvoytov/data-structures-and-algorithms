@@ -138,9 +138,15 @@ In computing, a hash table is a data structure that implements an associative ar
 I have created custom methods and tests for them: 
 add();get();contains(), hash(), toString();
 
- ## Challenge
- <!-- Description of the challenge -->
+
+ ## Challenge 32
+Find the first repeated word in a book.
  
  ## Approach & Efficiency
- <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+ Creating new array, creating new hashtable, if word was added in the previous itternation and duplicate exists then return that word to the user, else add the word to the hashtable for storage and continue.
+O(n) space
+O(n) time 
+
+![Image description](/code401challenges/assets/repeatedWord.jpg)
+ 
  
