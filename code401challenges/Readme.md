@@ -149,4 +149,16 @@ O(n) time
 
 ![Image description](/code401challenges/assets/repeatedWord.jpg)
  
+ ## Challenge 33
+Find common values in 2 binary trees.
+  
+  ## Approach & Efficiency
+Creating 3 hashtables. 1 and 2nd will be holding values form binary trees, and the 3rd will be holding values of intersections
+ O(n) space
+ O(n) time 
+ 
+ ![Image description](/code401challenges/assets/treeintersection.jpg)
+ 
+ 
+ 
  

@@ -15,7 +15,6 @@ public class Hashtable {
     }
 
     //This method should hash the key and add the key and value pair to the table, handling collisions as needed.
-//needed//
     public void add(String key, String value) {
         int hashKey = this.hash(key);
         Storage storage = new Storage(key, value);
