@@ -1,35 +1,58 @@
 package code401challenges.hashtable;
 
-import code401challenges.tree.BinaryTree;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Stack;
 
 public class TreeIntersection {
+//used in class demo for reference. It made sense to me to do it with nodes this time
 
-    public static Hashtable treeIntersection(BinaryTree tree1, BinaryTree tree2) {
-        Hashtable table1 = new Hashtable();
-        Hashtable table2 = new Hashtable();
-//        Hashtable table3 = new Hashtable();
-
-        LinkedList secondQ = new LinkedList();
-
-
-        for (Object string : tree1.postOrder()) table1.add(string.toString(), null);
-
-
-//        for (Object string : tree2.postOrder()) table2.add(string.toString(), null);
-
-        for (Object string : tree2.postOrder()) secondQ.add(string);
-
-
-        // If removes all values from set1 that aren't also in set2
-        for (Object value : secondQ) {
-//            String value = "";
-            if (table1.contains(value.toString())) {
-                table2.add(value.toString(), null);
+    public static ArrayList<Integer> treeIntersection(Tree one, Tree two) {
+        ArrayList<Integer> vals = new ArrayList<>();
+        HashSet<Integer> seenNumbers = new HashSet<>();
+        Stack<Node> nodes = new Stack<>();
+        nodes.add(one.root);
+        while (!nodes.empty()) {
+            Node temp = nodes.pop();
+            seenNumbers.add(temp.value);
+            if (temp.left != null) {
+                nodes.add(temp.left);
+            }
+            if (temp.right != null) {
+                nodes.add(temp.right);
             }
         }
-        return table2;
+        nodes.add(two.root);
+        while (!nodes.empty()) {
+            Node temp = nodes.pop();
+            if (seenNumbers.contains(temp.value)) {
+                vals.add(temp.value);
+            }
+            if (temp.left != null) {
+                nodes.add(temp.left);
+            }
+            if (temp.right != null) {
+                nodes.add(temp.right);
+            }
+        }
+        return vals;
+    }
+
+    static class Tree {
+        Node root;
+    }
+
+    static class Node {
+        int value;
+        Node left;
+        Node right;
+
+        public Node(int value, Node left, Node right) {
+            this.value = value;
+            this.left = left;
+            this.right = right;
+        }
     }
 }
 
