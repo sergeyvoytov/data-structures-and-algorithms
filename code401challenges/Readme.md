@@ -160,5 +160,20 @@ Creating 3 hashtables. 1 and 2nd will be holding values form binary trees, and t
  ![Image description](/code401challenges/assets/treeintersection.jpg)
  
  
+ # Graphs
+A graph is a common data structure that consists of a finite set of nodes (or vertices) and a set of edges connecting them.
+
+A pair (x,y) is referred to as an edge, which communicates that the x vertex connects to the y vertex. 
+ 
+ ## Challenge
+ <!-- Description of the challenge -->
+ 
+ ## Approach & Efficiency
+ <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+ 
+ ## API
+ <!-- Description of each method publicly available in your Graph -->
+ 
+ 
  
  
