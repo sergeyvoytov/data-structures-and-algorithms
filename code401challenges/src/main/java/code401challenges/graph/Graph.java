@@ -29,8 +29,7 @@ public class Graph {
             node1.listEdges.add(edge1);
             Edge edge2 = new Edge(node1, weight);
             node2.listEdges.add(edge2);
-        }
-        else throw new IllegalArgumentException("Not existing Node!");
+        } else throw new IllegalArgumentException("Not existing Node!");
     }
 //    GetNodes()
 //    Returns all of the nodes in the graph as a collection (set, list, or similar)
@@ -58,6 +57,7 @@ public class Graph {
 
     @Override
     public String toString() {
-        return "" + listNodes ;
+        return "" +
+                listNodes;
     }
 }

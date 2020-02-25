@@ -165,15 +165,13 @@ A graph is a common data structure that consists of a finite set of nodes (or ve
 
 A pair (x,y) is referred to as an edge, which communicates that the x vertex connects to the y vertex. 
  
- ## Challenge
- <!-- Description of the challenge -->
- 
+ ## Challenge 34 BreadthFirst
+Traversing graph 
  ## Approach & Efficiency
- <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
- 
- ## API
- <!-- Description of each method publicly available in your Graph -->
- 
+O(n) Space
+O(n) Time 
+![Image description](/code401challenges/assets/breadth1st.jpg)
+
  
  
  
