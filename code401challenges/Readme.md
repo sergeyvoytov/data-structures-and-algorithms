@@ -173,5 +173,10 @@ O(n) Time
 ![Image description](/code401challenges/assets/breadth1st.jpg)
 
  
- 
+ ## Challenge 35 get edge
+ Traversing graph 
+  ## Approach & Efficiency
+ O(n) Space
+ O(n) Time 
+ ![Image description](/code401challenges/assets/getedges.jpg)
  
