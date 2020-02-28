@@ -29,7 +29,7 @@ public class DepthFirstTest {
         compareList.add(mark);
         compareList.add(rob);
         compareList.add(maria);
-        assertEquals("[Bob, Mark, Maria, Rob, Alice]", DepthFirst.depthFirst(graph).toString());
+        assertEquals("[Rob, Mark, Alice, Maria, Bob]", DepthFirst.depthFirst(rob).toString());
 
     }
 
